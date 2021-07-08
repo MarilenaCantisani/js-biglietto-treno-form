@@ -1,18 +1,18 @@
+/* Reset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-.m-20 {
-    margin: 20px 0;
-} 
-
+/* Utility */
 .container {
     margin: auto;
     width: 1400px;
 }
-
+.m-20 {
+    margin: 20px 0;
+} 
 #button-generate-ticket, #button-reset {
     cursor: pointer;
 }

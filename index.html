@@ -17,17 +17,17 @@
             <!--* Passenger name *-->
             <div class="m-20">
                 <label for="name">Nome Passeggero:</label>
-                <input type="text" id="name" name="name">
+                <input type="text" id="name">
             </div>
             <!--* kms *-->
             <div class="m-20">
                 <label for="kms">Distanza percorso in kms:</label>
-                <input type="text" id="kms" name="kms">
+                <input type="number" id="kms" min="20" step="5" value="15">
             </div>
             <!--* Age group *-->
             <div class="m-20">
                 <label for="age-group">Fascia d'età:</label>
-                <select name="age-group" id="age-group">
+                <select id="age-group">
                     <option value="min-18">Minorenne</option>
                     <option value="maj-18">Maggiorenne</option>
                     <option value="over-65">Over 65</option>
