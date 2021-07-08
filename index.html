@@ -12,38 +12,44 @@
 <body>
     <div class="container">
         <!-- Passenger info -->
-        <section id="passenger-info">
-            <h1 class="m-20">Inserisci i tuoi dati di viaggio:</h1>
-            <!--* Passenger name *-->
-            <div class="m-20">
-                <label for="name">Nome Passeggero:</label>
-                <input class="placeholder" type="text" id="name">
+        <section id="passenger-info" class="m-100 ">
+            <h1 class="pt-20 text-center grow-1 text-white mb-20">CALCOLA IL PREZZO DEL TUO BIGLIETTO:</h1>
+            <div class="d-flex bg-white p-20 ">
+                <!--* Passenger name *-->
+                <div class="col m-20">
+                    <label for="name">Nome Passeggero:</label>
+                    <input class="placeholder" type="text" id="name">
+                </div>
+                <!--* kms *-->
+                <div class="col m-20">
+                    <label for="kms">Distanza percorso in kms:</label>
+                    <input class="placeholder" type="number" id="kms" min="20" step="5" value="15">
+                </div>
+                <!--* Age group *-->
+                <div class="col m-20">
+                    <label for="age-group">Fascia d'età:</label>
+                    <select class="placeholder" id="age-group">
+                        <option value="min-18">Minorenne</option>
+                        <option selected value="maj-18">Maggiorenne</option>
+                        <option value="over-65">Over 65</option>
+                    </select>
+                </div>
             </div>
-            <!--* kms *-->
-            <div class="m-20">
-                <label for="kms">Distanza percorso in kms:</label>
-                <input class="placeholder" type="number" id="kms" min="20" step="5" value="15">
+            <div class="button bg-white text-center border-radius-20">
+                <!--* Button "Generate ticket" *-->
+                <button id="button-generate-ticket" class="col m-20 p-10">Genera biglietto</button>
+                <!--* Button "Reset" *-->
+                <button id="button-reset" class="col m-20 p-10 ">Resetta</button>
+
             </div>
-            <!--* Age group *-->
-            <div class="m-20">
-                <label for="age-group">Fascia d'età:</label>
-                <select class="placeholder" id="age-group">
-                    <option value="min-18">Minorenne</option>
-                    <option selected value="maj-18">Maggiorenne</option>
-                    <option value="over-65">Over 65</option>
-                </select>
-            </div>
-            <!--* Button "Generate ticket" *-->
-            <button id="button-generate-ticket" class="m-20">Genera biglietto</button>
-            <!--* Button "Reset" *-->
-            <button id="button-reset" class="m-20">Resetta</button>
             <hr>
         </section>
 
         <!-- Ticket info -->
-        <section class="hidden" id="ticket-info">
-            <h2 class="m-20">Il tuo biglietto:</h2>
-            <p class="m-20"><strong>Nome passeggero:</strong><span id="passenger-name"></span></p>
+        <section class="hidden bg-white m-100 p-20" id="ticket-info">
+            <h2 class="m-20 text-center text-teal">IL TUO BIGLIETTO:</h2>
+            <p class="m-20"><strong>Nome passeggero:</strong><span class="text-white bg-teal p-10 m-10"
+                    id="passenger-name"></span></p>
             <p class="m-20"><strong>Offerta:</strong><span id="discount-applied"></span></p>
             <p class="m-20"><strong>Carrozza:</strong><span id="train-car"></span></p>
             <p class="m-20"><strong>Codice treno:</strong><span id="train-code"></span></p>

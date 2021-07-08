@@ -71,7 +71,7 @@ buttonGenerateTicketElement.addEventListener("click", function () {
     console.log("Numero treno: ", trainCodeNumber);
 
     //* Print in the ticket-info section
-    passengetNameElement.innerHTML = " " + nameValue;
+    passengetNameElement.innerHTML = nameValue;
     discountAppliedElement.innerHTML = " " + messageDiscountApplied;
     trainCarElement.innerHTML = " " + trainCarNumber;
     trainCodeElement.innerHTML = " " + trainCodeNumber;
