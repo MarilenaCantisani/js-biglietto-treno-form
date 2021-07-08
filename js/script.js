@@ -17,6 +17,8 @@ var kmsElement = document.getElementById("kms");
 var ageGroupElement = document.getElementById("age-group");
 var buttonGenerateTicketElement = document.getElementById("button-generate-ticket");
 var buttonResetElement = document.getElementById("button-reset");
+var ticketInfoElement = document.getElementById("ticket-info");
+
 
 // Ticket-info section 
 var passengetNameElement = document.getElementById("passenger-name");
@@ -75,16 +77,18 @@ buttonGenerateTicketElement.addEventListener("click", function () {
     trainCodeElement.innerHTML = " " + trainCodeNumber;
     priceTicketElement.innerHTML = " " + priceKm;
 
-    //* Visibility Ticket info
-    var ticketInfoElement = document.getElementById("ticket-info");
+    //* Add Visibility Hidden to ticket info section
     ticketInfoElement.classList.remove("hidden");
 });
 
 buttonResetElement.addEventListener("click", function () {
+    //* Reset value element
+    console.log("reset premuto")
     nameElement.value = "";
     kmsElement.value = "15";
     ageGroupElement.value = "maj-18";
 
+    //* Add Visibility Hidden to ticket info section
     ticketInfoElement.classList.add("hidden");
 
 });
