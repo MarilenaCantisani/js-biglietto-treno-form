@@ -16,3 +16,7 @@
 #button-generate-ticket, #button-reset {
     cursor: pointer;
 }
+
+.hidden {
+    visibility: hidden;
+}

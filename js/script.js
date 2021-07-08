@@ -27,6 +27,7 @@ var priceTicketElement = document.getElementById("price-ticket");
 
 // Event listener
 buttonGenerateTicketElement.addEventListener("click", function () {
+    //* Values entered
     nameValue = nameElement.value;
     console.log("Nome passeggero: ", nameValue);
     kmsValue = kmsElement.value;
@@ -34,30 +35,59 @@ buttonGenerateTicketElement.addEventListener("click", function () {
     ageGroupValue = ageGroupElement.value;
     console.log("Fascia d'età: ", ageGroupValue);
 
+    //* Price calculation 
     var priceKm = 0.21 * kmsValue;
     console.log("Prezzo/km: ", priceKm);
     var messageDiscountApplied = "Tariffa ordinaria";
     console.log("Tipo di tariffa: ", messageDiscountApplied);
 
+    //* Age and discount check
     if (ageGroupValue === "min-18") {
         priceKm *= 0.8;
         console.log("Prezzo scontato del 20%: ", priceKm);
-        messageDiscountApplied = "Tariffa scontata: -20%";
+        messageDiscountApplied = "Tariffa scontata (- 20%)";
         console.log("Tipo di tariffa: ", messageDiscountApplied);
     }
 
     if (ageGroupValue === "over-65") {
         priceKm *= 0.6;
         console.log("Prezzo scontato del 40%: ", priceKm);
-        messageDiscountApplied = "Tariffa scontata: -40%";
+        messageDiscountApplied = "Tariffa scontata (- 40%)";
         console.log("Tipo di tariffa: ", messageDiscountApplied);
     }
 
+    //* Final price calculation
     priceKm = "€ " + priceKm.toFixed(2);
     console.log("Prezzo con due decimali: ", priceKm);
+
+    //* Random train car number
+    var trainCarNumber = Math.floor(Math.random() * 20) + 1;
+    console.log("Numero cabina ", trainCarNumber);
+
+    //* Random train code number
+    var trainCodeNumber = Math.floor(Math.random() * (4999 - 4001)) + 4001;
+    console.log("Numero treno: ", trainCodeNumber);
+
+    //* Print in the ticket-info section
+    passengetNameElement.innerHTML = " " + nameValue;
+    discountAppliedElement.innerHTML = " " + messageDiscountApplied;
+    trainCarElement.innerHTML = " " + trainCarNumber;
+    trainCodeElement.innerHTML = " " + trainCodeNumber;
+    priceTicketElement.innerHTML = " " + priceKm;
+
+    //* Visibility Ticket info
+    var ticketInfoElement = document.getElementById("ticket-info");
+    ticketInfoElement.classList.remove("hidden");
 });
 
+buttonResetElement.addEventListener("click", function () {
+    nameElement.value = "";
+    kmsElement.value = "15";
+    ageGroupElement.value = "maj-18";
 
+    ticketInfoElement.classList.add("hidden");
+
+});
 
 
 
