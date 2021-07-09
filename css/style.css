@@ -1,9 +1,7 @@
 /* Reset */
-
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 
 /* Utility */
 .hidden {
@@ -15,17 +13,12 @@ body {
 .text-green {
     color: seagreen;
 }
-
 #ticket-info .row  {
     height: 20vh;
-
 }
-
 .bg-white-smoke {
     background-color:rgb(182, 182, 182);
 }
-
 .bg-ligh-gray {
     background-color: lightgray;
-
 }
